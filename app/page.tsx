@@ -9,7 +9,7 @@ export default function Home() {
       <h1
         className="mb-4 mt-20 text-4xl font-extrabold leading-none tracking-tight text-gray-900"
       >
-        <span className="text-orange-500">Astro</span> x <span className="text-blue-500"
+        <span className="text-black">NextJS</span> x <span className="text-blue-500"
         >Agora</span
         >
       </h1>

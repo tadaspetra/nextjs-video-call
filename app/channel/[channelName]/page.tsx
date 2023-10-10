@@ -7,5 +7,6 @@ export default function Page({ params }: { params: { channelName: string } }) {
                 {params.channelName!}
             </p>
             <Call appId={process.env.PUBLIC_AGORA_APP_ID!} channelName={params.channelName}></Call>
-        </main>)
+        </main>
+    )
 }
