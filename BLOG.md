@@ -1,4 +1,4 @@
-# NextJS Video Call
+# Build a NextJS Video Call App
 
 Video calling has become an essential feature in today's digital landscape. Whether it's for remote work, online education, or staying connected with loved ones, the ability to communicate face-to-face over the internet is crucial. As a developer, you might be looking for a reliable solution to integrate video calling into your NextJS application. Look no further! In this article, we will explore how to implement a video call feature using the Agora React SDK.
 
@@ -44,14 +44,14 @@ Retrieve the App ID, which we’ll use to authorize the app requests as we devel
 ## Building a Form with NextJS
 
 ### 'use client'
-The form we want to build is a very simple form, where we take the input from the user and route them to the `channel/<form input here>` route of the website. 
+The form we want to build is a very simple form, where we take the input from the user and route the user to the `channel/<form input here>` route of the website. 
 
-This needs to happen client side, because you are receiving the input from the user, and based on that input send them to a new route. For that we will use the `useRouter` hook from `next/navigation`. And in order to use it client side we have to add `'use client'` at the top of our file.
+This needs to happen client side because you are receiving the input from the user, and based on that input send them to a new route. For that we will use the `useRouter` hook from `next/navigation`. And to use it client side we have to add `'use client'` at the top of our file.
 
 ### Form UI
-The next step is creating the UI for the form input. For this we create a form element with an input element named "channel". 
+The next step is creating the UI for the form input. For this, we create a form element with an input element named "channel". 
 
-All the magic happens in the form's `onSubmit` method where we have access to the data(`e`) from the submit action. Whenever a form is submitted, the default action is to reload the page, however since we want to lead a user to a new page we want to manually handle this action. Using `e.preventDefault()` we are able to stop the page refresh. 
+All the magic happens in the form's `onSubmit` method where we have access to the data(`e`) from the submit action. Whenever a form is submitted, the default action is to reload the page, however, since we want to lead a user to a new page we want to manually handle this action. Using `e.preventDefault()` we can stop the page refresh. 
 
 The next step is to reroute the page to the appropriate channel page. We first define a variable called `target` which asserts that we have a "channel" value in our form event. 
 
@@ -111,7 +111,7 @@ Our form should look like this:
 ## Call Page
 In the Call component that we will build with the `agora-rtc-react`, we want to print the name of the channel we have joined.
 
-The redirect we used in the previous section is dynamic, and it will be different depending on the channelName we entered. To handle this in Next, we need to create a `channel` folder and and a `[channelName]` folder within and lastly a `page.tsx` file. The square brackets signify that the dynamic channel name in our URL will be passed as a parameter in this component. We just need to retrieve the channel name and display it in our UI.
+The redirect we used in the previous section is dynamic, and it will be different depending on the channelName we entered. To handle this in Next, we need to create a `channel` folder and a `[channelName]` folder within and lastly a `page.tsx` file. The square brackets signify that the dynamic channel name in our URL will be passed as a parameter in this component. We just need to retrieve the channel name and display it in our UI.
 
 So we retrieve the channel name from our params, and display it in the top left of our screen above the video call component. 
 
@@ -135,7 +135,7 @@ The Call component will contain two key components:
 * Videos of all the participants
 * End call button
 
-The interesting part is displaying the videos of all the participants. In order to do that we need to create our Agora client and pass it to the `AgoraRTCProvider`, which initializes and gives us access to the Agora RTC service. Inside this we can now display the videos component and an end call button:
+The interesting part is displaying the videos of all the participants. To do that we need to create our Agora client and pass it to the `AgoraRTCProvider`, which initializes and gives us access to the Agora RTC service. Inside this, we can now display the videos component and an end-call button:
 
 ```tsx
 const client = useRTCClient(AgoraRTC.createClient({ codec: "vp8", mode: "rtc" }));
@@ -181,7 +181,7 @@ Then we need to make sure all the audio for the remote users is started:
 audioTracks.map((track) => track.play());
 ```
 
-Finally, we need to define our UI: first a loading state, while we wait for the local user's microphone and video to begin, and then a grid of all the users who are in the call:
+Finally, we need to define our UI: first a loading state, while we wait for the local user's microphone and video to begin, and then a grid of all the users who are on the call:
 
 ```tsx
 const deviceLoading = isLoadingMic || isLoadingCam;
