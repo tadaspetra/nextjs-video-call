@@ -138,6 +138,19 @@ The Call component will contain two key components:
 The interesting part is displaying the videos of all the participants. To do that we need to create our Agora client and pass it to the `AgoraRTCProvider`, which initializes and gives us access to the Agora RTC service. Inside this, we can now display the videos component and an end-call button:
 
 ```tsx
+import AgoraRTC, {
+  AgoraRTCProvider,
+  LocalVideoTrack,
+  RemoteUser,
+  useJoin,
+  useLocalCameraTrack,
+  useLocalMicrophoneTrack,
+  usePublish,
+  useRTCClient,
+  useRemoteAudioTracks,
+  useRemoteUsers,
+} from "agora-rtc-react";
+
 const client = useRTCClient(AgoraRTC.createClient({ codec: "vp8", mode: "rtc" }));
 
   return (
