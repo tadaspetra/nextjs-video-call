@@ -26,7 +26,7 @@ Retrieve the App ID, which we’ll use to authorize the app requests as we devel
 ```
 ├── components
 │   └── Call.tsx
-├── app └── Call.tsx
+├── app
 |   └── Layout.tsx
 │   └── page.tsx
 │   └── channel
