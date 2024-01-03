@@ -10,7 +10,7 @@ We will use Agora for the video call portion of the app. Specifically, we will u
 We will use Tailwind CSS for minor styling of the application.
 
 ## Create an Agora Account
-[Sign up](https://sso2.agora.io/en/v6/signup) for an Agora account, and log in to the dashboard.
+[Sign up](https://sso2.agora.io/en/v7/signup) for an Agora account, and log in to the dashboard.
 
 Navigate to the Project List tab under the Project Management tab. Create a project by clicking the blue Create button.
 
@@ -224,6 +224,6 @@ With that, we have a complete video call experience. Here's how we built it:
 4. Redirect the site to a URL with the channel name.
 5. Display the channel name with a video call.
 
-The code for this project can be found [here](https://github.com/tadaspetra/nextjs-video-call). You can find out more about Agora video calling [here](https://docs.agora.io/en/video-calling/get-started/get-started-uikit?platform=reactjs).
+The code for this project can be found [here](https://github.com/tadaspetra/nextjs-video-call). You can find out more about Agora video calling [here](https://docs.agora.io/en/video-calling/get-started/get-started-sdk?platform=react-js).
 
 Thank you for reading!
